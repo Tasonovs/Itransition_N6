@@ -7,69 +7,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="styles/style.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 
 <body>
     <header>
-        <nav class="nav nav-tabs nav-stacked">
-            <a class="nav-link active" href="#">Active link</a>
-            <a class="nav-link" href="#">Link</a>
-            <a class="nav-link disabled" href="#">Disabled link</a>
-        </nav>
+        <h1>Tic-tac-toe</h1>
+        <p><span id="player-turn"></span>'s turn</p>
     </header>
-
-
-    <main>
-        <div id="intro-screen" class="center">
-            <h2>Choose your symbol:</h2>
-            <button type="button" id="choose-x" class="choose"><i class="fa fa-close"></i></button>
-            <button type="button" id="choose-o" class="choose player-two"><i class="fa fa-circle-o"></i></button>
-        </div>
-
-        <div id="enemy-screen" class="center hidden">
-            <h2>Play against:</h2>
-            <button type="button" id="choose-human" class="choose">Human</button>
-            <button type="button" id="choose-cpu" class="choose">CPU</button>
-        </div>
-
-        <div id="game-screen" class="center hidden">
-            <!-- Every cell has an id "cell" followed by cell row and cell column -->
-            <table class="center">
-                <tr>
-                    <td><button type="button" class="cell" id="cell00"></button></td>
-                    <td><button type="button" class="cell" id="cell01"></button></td>
-                    <td><button type="button" class="cell" id="cell02"></button></td>
-                </tr>
-                <tr>
-                    <td><button type="button" class="cell" id="cell10"></button></td>
-                    <td><button type="button" class="cell" id="cell11"></button></td>
-                    <td><button type="button" class="cell" id="cell12"></button></td>
-                </tr>
-                <tr>
-                    <td><button type="button" class="cell" id="cell20"></button></td>
-                    <td><button type="button" class="cell" id="cell21"></button></td>
-                    <td><button type="button" class="cell" id="cell22"></button></td>
-                </tr>
-            </table>
-            <button type="button" id="restart">Restart</button>
-            <div>
+    <main id="gameboard">
+        <div class="line r r-1"></div>
+        <div class="line r r-2"></div>
+        <div class="line c c-1"></div>
+        <div class="line c c-2"></div>
     </main>
+    <div id="num-of-players">
+        <p>Player 1</p>
+        <p><b>-VS-</b></p>
+        <p>Player 2</p>
+    </div>
+    <div id="gameover-msg">
+        <h3 id="winner"></h3>
+        <button id="reset-btn">New Game</button>
+    </div>
 
-
-    <footer>
-
-    </footer>
-
+    <!-- Источник: https://codepen.io/geoffbuell/pen/mdRjPwe -->
 
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script> -->
-
     <script src="https://unpkg.com/@microsoft/signalr@3.1.0/dist/browser/signalr.min.js "></script>
     <script src="js/tictactoeGameManager.js"></script>
 </body>

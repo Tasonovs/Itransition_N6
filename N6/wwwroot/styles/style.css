@@ -1,126 +1,127 @@
-body {
-    /*padding: 15px;*/
-    padding-top: 1em;
-    font-family: sans-serif;
-    color: #333;
-}
-
-#enemy-screen,
-#intro-screen {
-    max-width: 420px;
-    text-align: center;
-    /* Centers h2 and buttons */
-}
-
-#enemy-screen h2,
-#intro-screen h2 {
-    padding: 0 15px;
-    /* Prevent text from touching the edges of the screen */
-}
-
-#intro-screen button {
-    font-size: 3.4em;
-    padding: 3% 6%;
-    /* With "%" padding is based on container's width */
-    margin: 0 4%;
-    /* Create distance between buttons */
-}
-
-#enemy-screen button {
-    display: block;
-    margin: 0.6em auto;
-    font-size: 1.9em;
-    padding: 0.2em 0.4em;
-}
-
-
-/****** GAME GRID ******/
-
-table {
-    max-width: 420px;
-    max-height: 420px;
-    width: 85vw;
-    /* 85% of the viewport (body) width */
-    height: 85vw;
-    border-spacing: 4px 2px;
-    /* Space between cells */
-}
-
-td {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+* {
+    margin: 0;
     padding: 0;
-    width: 33%;
-    /* Every cell should be 1/3 of table height (and width) */
-    height: 33%;
 }
 
-.cell {
-    font-size: 3.4em;
-    font-size: 16vmin;
-    /* Responsive font size! Awesome! */
-    height: 100%;
-    /* Fill the container (td) */
-    width: 100%;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    color: #f6f7eb;
+    height: 100vh;
+    background: #393e41;
+    position: relative;
 }
 
-.wincell {
-    background-color: #c88;
-    /* Red background to highlight the "winning" line */
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.player-two {
-    color: #933;
+header h1 {
+    margin-bottom: 20px;
 }
 
+header #player-turn {
+    font-weight: 600;
+}
 
-/****** BUTTONS ******/
+#gameboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
 
-button {
+#gameboard .tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+#gameboard .tile:hover {
     cursor: pointer;
-    /* Visually show that you can interact with the button */
-    border: none;
-    /* Hides default border (and color, for some reason */
-    color: #333;
 }
 
-#restart {
-    font-size: 1.2em;
-    padding: 5px 10px;
-    /* Center horizontally */
-    margin: 20px auto;
-    display: block;
+#gameboard .line {
+    position: absolute;
+    z-index: 1;
+    background: #f6f7eb;
+    border-radius: 2px;
 }
 
-.choose,
-#restart {
-    border-radius: 0.3em;
+#gameboard .r {
+    width: 300px;
+    height: 4px;
 }
 
-.choose:active,
-#restart:active {
-    background-color: #ccc;
-    /* Darker color when the button is pressed */
+#gameboard .r-1 {
+    top: 98px;
 }
 
-.btn-green {
-    background-color: #70d260;
+#gameboard .r-2 {
+    bottom: 98px;
 }
 
-.btn-green:active {
-    /* Override the active background for #restart */
-    background-color: #60c050 !important;
+#gameboard .c {
+    width: 4px;
+    height: 300px;
 }
 
-
-/******  HELPER CLASSES  ******/
-
-.center {
-    margin: 0 auto;
+#gameboard .c-1 {
+    left: 98px;
 }
 
-.hidden {
+#gameboard .c-2 {
+    right: 98px;
+}
+
+#num-of-players {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#gameover-msg {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    color: #393e41;
+    width: 200px;
+    height: 150px;
+    background: #f6f7eb;
+    border-radius: 8px;
+    box-shadow: 0 0 5px black;
     display: none;
 }
 
-.cannotuse {
-    cursor: not-allowed;
+#gameover-msg h3 {
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+#gameover-msg button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #f6f7eb;
+    margin: auto;
+    padding: 8px;
+    background: #16b550;
+    border-radius: 4px;
+    border: none;
+}
+
+#gameover-msg button:hover {
+    cursor: pointer;
 }

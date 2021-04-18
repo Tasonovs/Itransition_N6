@@ -6,9 +6,12 @@ namespace N6
 {
 	public class TestHub : Hub
 	{
-		public async Task Send(string message, string userName)
+		private int turn = 0;
+		public async Task OnTileClick(string tileId)
 		{
-			await Clients.All.SendAsync("Send", message, userName);
+			bool isXTurn = (turn % 2 == 1);
+			string symbol = isXTurn ? "X" : "O";
+			await Clients.All.SendAsync("SendTurn", tileId, symbol);
 		}
 	}
 }
