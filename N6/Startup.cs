@@ -30,6 +30,11 @@ namespace N6
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapHub<TestHub>("/hub");
+				endpoints.MapGet("/getgameslist", async context =>
+				{
+					string jsonText = System.Text.Json.JsonSerializer.Serialize(GameManager.GetGamesCommonData());
+					await context.Response.WriteAsync(jsonText);
+				});
 			});
 		}
 	}

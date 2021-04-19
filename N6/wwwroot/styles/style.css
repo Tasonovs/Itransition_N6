@@ -4,16 +4,20 @@
     padding: 0;
 }
 
-body {
+#game-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     display: flex;
+    z-index: -1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     color: #f6f7eb;
-    height: 100vh;
     background: #393e41;
-    position: relative;
 }
 
 header {
@@ -25,16 +29,13 @@ header h1 {
     margin-bottom: 20px;
 }
 
-header #player-turn {
-    font-weight: 600;
-}
-
 #gameboard {
     display: flex;
     flex-wrap: wrap;
     width: 300px;
     height: 300px;
     position: relative;
+    margin-top: 30px;
 }
 
 #gameboard .tile {
@@ -85,14 +86,6 @@ header #player-turn {
     right: 98px;
 }
 
-#num-of-players {
-    width: 300px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 30px;
-}
-
 #gameover-msg {
     position: absolute;
     z-index: 2;
@@ -124,4 +117,31 @@ header #player-turn {
 
 #gameover-msg button:hover {
     cursor: pointer;
+}
+
+#num-of-players {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#games-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.card {
+    max-width: 500px;
+    min-width: 200px;
+    height: fit-content;
+    width: 32%;
+    margin: 1%;
+}
+
+.nav-wrapper {
+    background-color: #393e41;
 }
