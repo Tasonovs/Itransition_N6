@@ -91,12 +91,13 @@ header h1 {
     z-index: 2;
     text-align: center;
     color: #393e41;
-    width: 200px;
-    height: 150px;
+    width: max-content;
+    height: max-content;
     background: #f6f7eb;
     border-radius: 8px;
     box-shadow: 0 0 5px black;
     display: none;
+    padding: 50px;
 }
 
 #gameover-msg h3 {
@@ -121,9 +122,6 @@ header h1 {
 
 #num-of-players {
     width: 300px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     margin-top: 30px;
 }
 
@@ -131,17 +129,55 @@ header h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .card {
     max-width: 500px;
     min-width: 200px;
-    height: fit-content;
     width: 32%;
-    margin: 1%;
+    margin: 4px;
 }
 
 .nav-wrapper {
     background-color: #393e41;
+}
+
+
+body {
+    color: #fff;
+    background-image: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: Gradient 10s ease infinite;
+}
+
+@keyframes Gradient {
+    0%,
+    100% {
+        background-position: left
+    }
+    50% {
+        background-position: right
+    }
+}
+
+.container > h1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card {
+    background-color: #393e41 !important;
+}
+
+#connect-section {
+    min-height: 100vh;
+}
+
+#create-section {
+    min-height: 100vh;
+}
+
+#create__tags-input input, #connect__tags-input input {
+    color: white !important;
 }

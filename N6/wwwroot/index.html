@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body>
@@ -21,23 +22,20 @@
                 <ul id="nav-mobile" class="left">
                     <li><a onclick="showCreateScreen()"><i class="material-icons left">add_circle_outline</i>Create</a></li>
                     <li><a onclick="showConnectScreen()"><i class="material-icons left">power</i>Connect</a></li>
-
-                    <li><a onclick="showGameScreen()">(Game)</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <section id="create-section" class="container center-align">
-        <h1>Welcome to the</h1>
-        <h1>Tic-tac-toe game</h1>
-        <div id="create__tags-input" class="chips chips-placeholder left-align"></div>
-        <a class="waves-effect waves-light btn-large" onclick="createGame()"><i class="material-icons left">add_circle</i>Create game</a>
+        <h1>Welcome to the Tic-tac-toe</h1>
+        <div id="create__tags-input" class="chips chips-placeholder left-align white-text"></div>
+        <a class="btn-large transparent" onclick="createGame()"><i class="material-icons left">add_circle</i>Create game</a>
     </section>
 
     <section id="connect-section" class="container center-align hide">
         <h1>Select a game to connect</h1>
-        <input type="text" name="" id="">
+        <div id="connect__tags-input" class="chips chips-placeholder left-align white-text"></div>
 
         <div class="container" id="games-list"></div>
     </section>
@@ -45,7 +43,7 @@
     <section id="game-section" class="hide">
         <div class="center-align">
             <h1>Tic-tac-toe</h1>
-            <p>Game ID:<span id="game-id"></span></p>
+            <p>Game ID: <span id="game-id"></span></p>
         </div>
         <div id="gameboard">
             <div class="line r r-1"></div>
@@ -53,20 +51,23 @@
             <div class="line c c-1"></div>
             <div class="line c c-2"></div>
         </div>
-        <div id="num-of-players">
-            <div id="playerX"></div>
-            <p><b>X-VS-O</b></p>
-            <div id="playerO"></div>
+        <div class="container">
+            <div id="num-of-players" class="row">
+                <div class="col s4 center-align" id="playerX"></div>
+                <div class="col s4 center-align"><b>X-VS-O</b></div>
+                <div class="col s4 center-align" id="playerO"></div>
+            </div>
+        </div>
+
+        <div id="gameover-msg">
+            <h3 id="winner"></h3>
         </div>
     </section>
 
 
-    <!--<div id="gameover-msg">
-        <h3 id="winner"></h3>
-        <button id="reset-btn">New Game</button>
-    </div>-->
+
+
     <!-- Tic-tac-toe link: https://codepen.io/geoffbuell/pen/mdRjPwe -->
-    <!-- Tags input link: https://codepen.io/jagruti23/pen/bGggJZR -->
 
 
 
